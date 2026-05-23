@@ -26,6 +26,7 @@ public:
     //metodos;
     void addArista(int nodoOrigen, int nodoDestino, int peso);
     void dijkstra(int inicio);
+    void imprimirListaAdyacencia();
 };
 
 
