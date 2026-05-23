@@ -13,7 +13,12 @@ Grafo::Grafo(int numVertices):numVertices(numVertices) {
 }
 
 void Grafo::addArista(int nodoOrigen, int nodoDestino, int peso) {
+    //Camino de ida
     listaAdyacencia.at(nodoOrigen).push_back(make_shared<Arista>(nodoDestino, peso));
+
+    //Camino de vuelta
+    listaAdyacencia.at(nodoOrigen).push_back(make_shared<Arista>(nodoOrigen, peso));
+
 }
 
 void Grafo::dijkstra(int inicio) {
@@ -49,7 +54,7 @@ void Grafo::dijkstra(int inicio) {
                 distancias.at(nodoDestino) = distancias.at(nodo) + peso;
                 //lo añadimos a la cola para recorrerlo luego
                 colaPrioridad.push({distancias.at(nodoDestino), nodoDestino});
-                
+
                 cout << "Distancia minTemporal a nodo " << nodoDestino << ": " << distancias.at(nodoDestino) << endl;
             }
         }

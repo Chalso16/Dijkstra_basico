@@ -25,5 +25,10 @@ int main() {
     cout << "--------------------------------------\n";
     g.dijkstra(0);
 
+    // Ejecutamos el algoritmo partiendo desde el nodo 0
+    cout << "\nEjecutando Dijkstra desde el nodo 1...\n";
+    cout << "--------------------------------------\n";
+    g.dijkstra(1);
+
     return 0;
 }
