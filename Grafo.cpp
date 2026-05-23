@@ -17,7 +17,8 @@ void Grafo::addArista(int nodoOrigen, int nodoDestino, int peso) {
     listaAdyacencia.at(nodoOrigen).push_back(make_shared<Arista>(nodoDestino, peso));
 
     //Camino de vuelta
-    listaAdyacencia.at(nodoOrigen).push_back(make_shared<Arista>(nodoOrigen, peso));
+    //Descomentar hace que el grafo NO sea dirigido
+    //listaAdyacencia.at(nodoDestino).push_back(make_shared<Arista>(nodoOrigen, peso));
 
 }
 
