@@ -42,10 +42,15 @@ void Grafo::dijkstra(int inicio) {
             int nodoDestino = arista->hacia;
             int peso = arista->peso;
 
-            //si se encuentra un camino mas corto
+            //Si se encuentra un camino mas corto
+            //Si la distancia hasta el nodo + el peso es menor a la distancia al nodoDestino no metemos
             if (distancias.at(nodo) + peso < distancias.at(nodoDestino)) {
-                distancias.at(nodoDestino) = distancias.at(nodo) + nodo;
+                //actualizamos el valor de la distancia al nodoDestino
+                distancias.at(nodoDestino) = distancias.at(nodo) + peso;
+                //lo añadimos a la cola para recorrerlo luego
                 colaPrioridad.push({distancias.at(nodoDestino), nodoDestino});
+                
+                cout << "Distancia minTemporal a nodo " << nodoDestino << ": " << distancias.at(nodoDestino) << endl;
             }
         }
     }
