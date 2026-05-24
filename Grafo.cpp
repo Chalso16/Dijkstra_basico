@@ -49,7 +49,7 @@ void Grafo::dijkstra(int inicio) {
             int peso = arista->peso;
 
             //Si se encuentra un camino mas corto
-            //Distancia hasta NodoActual
+            //Distancia hasta NodoActual + peso menor a distancia hasta el destino
             if (distancias.at(nodoActual) + peso < distancias.at(nodoDestino)) {
                 //actualizamos el valor de la distancia al nodoDestino
                 distancias.at(nodoDestino) = distancias.at(nodoActual) + peso;
